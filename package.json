@@ -7,6 +7,6 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.18.2"  // add your actual dependencies
+    "express": "^4.18.2" 
   }
 }
