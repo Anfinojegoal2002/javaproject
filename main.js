@@ -440,7 +440,7 @@ let currentPage = 1;
 
 async function fetchEmployees() {
   try {
-    const response = await fetch("https://javaproject1111.onrender.com//employees");
+    const response = await fetch("https://javaproject1111.onrender.com/employees");
     employeesData = await response.json();
     renderTable(currentPage);
     renderPagination();
