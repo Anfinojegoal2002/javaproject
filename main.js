@@ -12,7 +12,7 @@ document.getElementById('closeForm').addEventListener('click', function () {
 
 async function fetchEmployees() {
   try {
-    const response = await fetch('http://localhost:3000/employees');
+    const response = await fetch('https://javaproject1111.onrender.com/employees');
     const employees = await response.json();
     console.log('emp', employees);
 
@@ -266,7 +266,7 @@ function getFormData() {
 
 const submitEmployeeData = async (employeeData, employeeId = null) => {
   const method = employeeId ? "PUT" : "POST";
-  const url = employeeId ? `http://localhost:3000/employees/${employeeId}` : "http://localhost:3000/employees";
+  const url = employeeId ? `https://javaproject1111.onrender.com/${employeeId}` : "https://javaproject1111.onrender.com/employees";
 
   try {
     const response = await fetch(url, {
@@ -311,7 +311,7 @@ const handleFormSubmit = async (event) => {
 
 function editEmployee(employeeId) {
 
-  fetch(`http://localhost:3000/employees/${employeeId}`)
+  fetch(`https://javaproject1111.onrender.com/employees/${employeeId}`)
     .then(response => response.json())
     .then(employee => {
       document.getElementById("formcontainer").reset();
@@ -364,7 +364,7 @@ function closemodal() {
 async function deletes(employeeId) {
   console.log("Fetching employee to delete:", employeeId);
   try {
-    const response = await fetch(`http://localhost:3000/employees/${employeeId}`);
+    const response = await fetch(`https://javaproject1111.onrender.com/employees/${employeeId}`);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -378,7 +378,7 @@ async function deletes(employeeId) {
 document.getElementById("confirmDelete").onclick = async () => {
   if (deleteEmployee) {
     try {
-      const response = await fetch(`http://localhost:3000/employees/${deleteEmployee}`, {
+      const response = await fetch(`https://javaproject1111.onrender.com/employees/${deleteEmployee}`, {
         method: 'DELETE',
       });
 
@@ -440,7 +440,7 @@ let currentPage = 1;
 
 async function fetchEmployees() {
   try {
-    const response = await fetch("http://localhost:3000/employees");
+    const response = await fetch("https://javaproject1111.onrender.com//employees");
     employeesData = await response.json();
     renderTable(currentPage);
     renderPagination();
@@ -561,7 +561,7 @@ async function imagefetch(employeeId) {
       const formData = new FormData();
       formData.append("avatar", inputfile.files[0]);
 
-      const response = await fetch(`http://localhost:3000/employees/${employeeId}/avatar`, {
+      const response = await fetch(`https://javaproject1111.onrender.com/employees/${employeeId}/avatar`, {
           method: "POST",
           body: formData,
       });
