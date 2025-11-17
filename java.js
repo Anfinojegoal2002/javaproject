@@ -12,7 +12,7 @@ function closemodal() {
 async function deletes(employeeId) {
   console.log("Fetching employee to delete:", employeeId);
   try {
-    const response = await fetch(`http://localhost:3000/employees/${employeeId}`);
+    const response = await fetch(`https://javaproject1111.onrender.com/employees/${employeeId}`);
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -26,7 +26,7 @@ async function deletes(employeeId) {
 document.getElementById("confirmDelete").onclick = async () => {
   if (deleteEmployee) {
     try {
-      const response = await fetch(`http://localhost:3000/employees/${deleteEmployee}`, {
+      const response = await fetch(`https://javaproject1111.onrender.com/employees/${deleteEmployee}`, {
         method: 'DELETE',
       });
 
